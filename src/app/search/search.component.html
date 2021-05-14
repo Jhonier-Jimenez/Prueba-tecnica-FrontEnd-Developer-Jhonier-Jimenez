@@ -1,0 +1,31 @@
+<div class="message" *ngIf="loading">
+    <span class="message-warning"> Cargando ... </span>
+</div>
+
+<div *ngIf="!loading">
+
+    <ng-container *ngIf="items.length; else noResults">
+        <div class="cards_container">
+            <app-card class="cards_container-card" *ngFor="let product of items" [product]="product"></app-card>
+        </div>
+        <div class="buttons_container">
+            <button [disabled]="currentLoad >= 3" (click)="loadMore()" class="buttons_container-button">Mostrar
+                mas</button>
+        </div>
+        <div class="limit-results">
+            <h3 *ngIf="currentLoad >= 3">Lo sentimos! Temporalmente no podemos mostrarte más resultados</h3>
+        </div>
+
+    </ng-container>
+
+    <ng-template #noResults>
+        <div class="message">
+            <span class="message-warning"> No hay publicaciones que coincidan con tu búsqueda.</span>
+            <ul class="message-advice">
+                <li> <strong>Revisa la ortografía</strong> de la palabra.</li>
+                <li> Utiliza <strong>palabras más genéricas</strong> o menos palabras.</li>
+            </ul>
+        </div>
+    </ng-template>
+
+</div>

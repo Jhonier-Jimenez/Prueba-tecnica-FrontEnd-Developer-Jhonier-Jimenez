@@ -1,0 +1,112 @@
+.card {
+  box-shadow: 2px 2px 2px 2px #b4aee8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  margin: 5%;
+
+  max-width: 18rem;
+  min-width: 18rem;
+  max-height: 32rem;
+  min-height: 32rem;
+  & > div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &-title {
+    font-size: 1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: pre-wrap;
+    max-width: 80%;
+    align-self: center;
+  }
+  &-original-price {
+    text-decoration: line-through;
+    color: #6b6b6b;
+  }
+  &-price {
+    color: #6a10ae;
+  }
+  &-button {
+    align-self: center;
+    background-color: #6a10ae;
+    margin: 2%;
+    border-radius: 5px;
+
+    color: white;
+    font: inherit;
+    box-shadow: 2px 2px 2px 2px #b4aee8;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 70%;
+  }
+  &-image {
+    max-width: 13rem;
+    min-width: 13rem;
+    max-height: 17rem;
+    min-height: 17rem;
+    align-self: center;
+  }
+  &__discount{
+    background-color: #6a10ae;
+    width: 20%;
+    font-size: 1rem;
+    padding: 1%;
+    border-radius: 2px;
+    z-index: 1;
+    position: relative;
+    bottom: 25rem;
+    &-number{
+      color: white;
+    }
+  }
+  &:hover {
+    animation: push-up 1s ease-out forwards;
+    box-shadow: 2px 2px 2px 2px #93329e;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    max-width: 17rem;
+    min-width: 17rem;
+    max-height: 28rem;
+    min-height: 28rem;
+    margin: 0;
+    margin-bottom: 12%;
+    
+    
+    &-image {
+      max-width: 9rem;
+      min-width: 9rem;
+      max-height: 14rem;
+      min-height: 14rem;
+    }
+
+    &__discount{
+      bottom: 21rem;
+    }
+  }
+}
+
+@keyframes push-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  33% {
+    transform: translateY(-1.5rem);
+  }
+
+  100% {
+    transform: translateY(-1rem);
+  }
+}
+

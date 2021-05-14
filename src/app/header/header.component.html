@@ -1,0 +1,33 @@
+<header class="header_main">
+    <div class="header_main__search">
+        <a href=""><img class="header_main-logo" src="./assets/images/logo.svg" alt="logo"></a>
+        <input [(ngModel)]="query" #search (keyup.enter)="onEnter(search.value)" class="header_main__search-input"
+            type="text" placeholder="Buscar aquí producto">
+        <div class="header_main__search__cart_login">
+            <img class="header_main__search__cart_login_cart" src="./assets/images/icon-cart.svg" alt="icon-cart">
+            <i class="header_main__search__cart_login_login far fa-user"></i>
+            <a class="header_main__search_link hover" href="">Iniciar sesión</a>
+        </div>
+
+    </div>
+    <div class="header_main__nav">
+        <a *ngFor="let tab of tabs; last as isLast" [ngClass]="{'border-right': !isLast}" class="header_main__nav-link" href="">{{tab}}</a>
+    </div>
+</header>
+
+<header class="header_responsive">
+  <img (click)="toggleMenu()" class="header_responsive-menu" src="./assets/images/icon-menu.svg" alt="icon-menu">
+  <img *ngIf="!isSearchVisible" class="header_responsive-logo" src="./assets/images/logo.svg" alt="logo">
+  <input *ngIf="isSearchVisible" [(ngModel)]="query" #search (keyup.enter)="onEnter(search.value)" class="header_responsive-input" type="text" placeholder="Buscar">
+  <i (click)="openSearch()" class="header_responsive-search_icon fas fa-search"></i>
+  <img class="header_responsive-cart" src="./assets/images/icon-cart.svg" alt="icon-cart">
+
+  <nav *ngIf="isMenuOpened" class="mobile_nav">
+    <ul>
+        <h3 *ngFor="let tab of tabs" class="mobile_nav-item">
+          <a (click)="toggleMenu()">{{tab}}</a>
+        </h3>
+    </ul>
+    <i (click)="toggleMenu()" class="mobile_nav-close fas fa-times"></i>
+  </nav>
+</header>

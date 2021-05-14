@@ -1,0 +1,21 @@
+<section class="products">
+    <h3>PRODUCTOS MÁS BUSCADOS</h3>
+</section>
+<div class="message" *ngIf="loading">
+    <span class="message-warning"> Cargando ... </span>
+</div>
+<ng-container *ngIf="visibleItems.length">
+
+    <div class="most__wanted">
+        <button class="most__wanted-button left-button" [disabled]="actualPosition == 0" (click)="moveLeft()">
+            &#8249;</button>
+        <div class="most__wanted-card_container">
+            <app-card class="most__wanted-card_container-card" *ngFor="let product of visibleItems" [product]="product"></app-card>
+        </div>
+
+        <button class="most__wanted-button right-button" [disabled]="actualPosition + amountToShow === totalItems" (click)="moveRight()">
+            &#8250;</button>
+    </div>
+
+
+</ng-container>

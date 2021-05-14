@@ -1,0 +1,75 @@
+.products {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.message {
+  margin: 15% auto;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.most__wanted {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-bottom: 2%;
+
+  &-card_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    justify-content: center;
+
+    &-card {
+      flex: 0 1 20%;
+      margin: 1%;
+    }
+  }
+
+  &-button {
+    align-self: center;
+    font-size: 6rem;
+    background-color: #7868e6;
+    margin: 2%;
+
+    color: white;
+
+    box-shadow: 2px 2px 2px 2px #6a10ae;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: white;
+      color: #000000;
+      cursor: not-allowed;
+    }
+  }
+  
+  .left-button {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+.message{
+  &-warning{
+    font-size: 1.5rem;
+  }
+}
+
+  .products {
+    font-size: 0.8rem;
+    margin: 0% 20%;
+    text-align: center;
+  }
+
+  .most__wanted {
+    margin-bottom: 4%;
+    &-button {
+      font-size: 2rem;
+    }
+  }
+}

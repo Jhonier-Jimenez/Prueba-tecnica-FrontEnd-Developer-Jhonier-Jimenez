@@ -1,0 +1,17 @@
+<div class="card">
+
+    <img class="card-image" [src]="product.thumbnail" alt="product-image">
+    <h2 class="card-title">{{product.title}}</h2>
+
+    <div>
+        <h4 class="card-original-price" *ngIf="discount">{{product.original_price | currency}}
+        </h4>
+        <h4 class="card-price">{{product.price | currency}}</h4>
+    </div>
+
+    <div class="card__discount" *ngIf="discount">
+        <span class="card__discount-number">-{{discount}}%</span>
+    </div>
+
+    <button class="card-button">Agregar al carrito</button>
+</div>

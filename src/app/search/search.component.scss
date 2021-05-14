@@ -1,0 +1,73 @@
+.cards_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5% 10% 0% 10%;
+  &-card {
+    flex: 0 1 20%;
+    margin: 1%;
+  }
+}
+
+.message {
+  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  & > span {
+    text-align: center;
+  }
+  &-warning {
+    align-self: center;
+    font-size: 3rem;
+  }
+  &-advice {
+    align-self: center;
+    font-size: 1.5rem;
+  }
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+  &-button {
+    align-self: center;
+    background-color: #7868e6;
+    margin: 2%;
+    border-radius: 5px;
+
+    color: white;
+    font: inherit;
+    box-shadow: 2px 2px 2px 2px #6a10ae;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 15%;
+    &:disabled {
+      background-color: white;
+      color: #000000;
+    }
+  }
+}
+
+.limit-results{
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .message {
+    margin: 60% auto;
+    &-warning {
+      font-size: 2rem;
+    }
+    &-advice {
+      font-size: 1.5rem;
+    }
+  }
+  .buttons_container {
+    padding-bottom: 5%;
+    &-button {
+      width: 50%;
+    }
+  }
+}
