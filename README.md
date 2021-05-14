@@ -1,4 +1,10 @@
-# PruebaFrontEnd
+# PruebaFrontEnd Jhonier Jimenez
+
+En el siguiente enlace puede visualizar las instrucciones dadas para esta prueba:
+https://drive.google.com/file/d/1hTpIJYfchJhbrk2jj9gLMM-hfPBKxTtx/view?usp=sharing 
+
+Y aquí puede ver el layout otorgado:
+https://xd.adobe.com/view/ec7301fe-d1c7-4ba7-a4d6-3a408949d529-b920/ 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
